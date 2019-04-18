@@ -1,0 +1,51 @@
+{
+  "name": "store-locator",
+  "version": "1.0.0",
+  "description": "Store locator using nodeJS, Express, MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "[Environment]::SetEnvironmentVariable('DEBUG','app,app:*,express:app'); & nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GautamArya/store-locator.git"
+  },
+  "keywords": [
+    "Node",
+    "Store",
+    "Locator",
+    "Store",
+    "Locator",
+    "Find",
+    "store",
+    "find",
+    "shop"
+  ],
+  "author": "gautam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GautamArya/store-locator/issues"
+  },
+  "homepage": "https://github.com/GautamArya/store-locator#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "debug": "^4.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jquery": "^3.4.0",
+    "mongodb": "^3.2.3",
+    "nodemon": "^1.18.11"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": 2500,
+    "env": {
+      "NODE_ENV": "DEVELOPMENT",
+      "port": 3000
+    }
+  }
+}
