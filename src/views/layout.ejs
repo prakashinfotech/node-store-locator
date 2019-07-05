@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ./partials/head %>
+  <%-defineContent('pageSectionA')%>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <% include ./partials/nav %>
+    </header>
+
+    <main>
+        <%- body -%>
+    </main>
+  
+    <footer>
+      <p class="text-center"> All rights reserved - &copy; </p>
+      <div class="row">
+        <% include ./partials/footer %>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

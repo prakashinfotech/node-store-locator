@@ -1,60 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <% include ../partials/head %>
-</head>
-<body class="container">
-  <header>
-    <% include ../partials/nav %>
-  </header>
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">Add store</div>
+    <h6 class="card-subtitle mb-2 text-muted">Tell us something about your business</h6>
+    <% if (addStoreForm.errors) { %>
+      <div class="form-group col-md-12">
+        <ul class="alert alert-danger" role="alert">
+          <% Object.keys(addStoreForm.errors).forEach(err => { %>
+            <li><%=addStoreForm.errors[err].msg%></li>
+          <%})%>
+        </ul>
+      </div>
+    <% } %>
+    <form method="POST" action="save-store">
+        
+      <div class="form-group">
+        <input type="text" class="form-control" name="name" id="exampleInputBussName1" placeholder="Business name" value="<%=addStoreForm.fields.name%>" />
+      </div>
 
-  <main class="card">
-    <div class="card-body">
-      <div class="card-title">Add store</div>
-      <h6 class="card-subtitle mb-2 text-muted">Tell us something about your business</h6>
-      <form>
-        <div class="form-group">
-          <input type="text" class="form-control" id="exampleInputBussName1" placeholder="Business name">
+      <div class="form-group">
+        <select class="custom-select" placeholder="Category" id="inputGroupSelect04" name="category" value="<%=addStoreForm.fields.category%>" >
+          <option selected>Choose...</option>
+          <option value="1">Sweet shop</option>
+          <option value="2">Stationary</option>
+          <option value="3">Garage</option>
+          <option value="4">Petrol Pump</option>
+          <option value="5">Electric shop</option>
+          <option value="6">Retail Shop</option>
+          <option value="7">Pharmacy</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="photo_url" id="photoUrl" placeholder="Photo URL" value="<%=addStoreForm.fields.photo_url%>" />
+      </div>
+      <div class="form-group">
+        <textarea name="description" class="form-control" placeholder="About your business"><%=addStoreForm.fields.description%></textarea>
+      </div>
+      <div class="form-group">
+        <textarea name="address" class="form-control" placeholder="Address"><%=addStoreForm.fields.address%></textarea>
+      </div>
+      <div class="form-inline">
+        <div class="mb-2  mr-sm-2">
+          <input type="text" class="form-control" name="lat" id="lat" placeholder="Lattitude" value="<%=addStoreForm.fields.lat%>" />
         </div>
-        <div class="form-group">
-          <select class="custom-select" placeholder="Category" id="inputGroupSelect04" name="business_category">
-            <option selected>Choose...</option>
-            <option value="1">Sweet shop</option>
-            <option value="2">Stationary</option>
-            <option value="3">Garage</option>
-            <option value="4">Petrol Pump</option>
-            <option value="5">Electric shop</option>
-            <option value="6">Retail Shop</option>
-            <option value="7">Pharmacy</option>
-          </select>
+        <div class="mb-2">
+          <input type="text" class="form-control" name="long" id="long" placeholder="Longitude" value="<%=addStoreForm.fields.long%>" />
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="photoUrl" placeholder="Photo URL" />
-        </div>
-        <div class="form-group">
-          <textarea name="description" class="form-control" placeholder="About your business"></textarea>
-        </div>
-        <div class="form-group">
-          <textarea name="address" class="form-control" placeholder="Address"></textarea>
-        </div>
-        <div class="form-inline">
-          <div class="mb-2  mr-sm-2">
-            <input type="text" class="form-control" name="lat" id="lat" placeholder="Lattitude" />
-          </div>
-          <div class="mb-2">
-            <input type="text" class="form-control" name="long" id="long" placeholder="Longitude" />
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="reset" class="btn btn-secondary">Cancel</button>
-      </form>
-    </div>
-  </main>
-
-  <footer class="text-center">
-    <div class="row">
-      <% include ../partials/footer %>
-    </div>
-  </footer>
-</body>
-</html>
+      </div>
+      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-secondary">Cancel</button>
+    </form>
+  </div>
+</div>

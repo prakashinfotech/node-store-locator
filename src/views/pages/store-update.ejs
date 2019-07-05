@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Edit store</div>
+        <form method="POST" action="/store/update">
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" id="exampleInputBussName1" placeholder="Business name" value="<%=store[0].name%>" />
+            <input type="hidden" class="form-control" name="id" value="<%=store[0].ID%>" />
+        </div>
+        <div class="form-group">
+            <select class="custom-select" placeholder="Category" id="inputGroupSelect04" name="category" value="<%=store[0].category%>">
+            <option>Choose...</option>
+            <option value="1" <%= store[0].category == '1' ? 'selected' : '' %> >Sweet shop</option>
+            <option value="2" <%= store[0].category == '2' ? 'selected' : '' %> >Stationary</option>
+            <option value="3" <%= store[0].category == '3' ? 'selected' : '' %> >Garage</option>
+            <option value="4" <%= store[0].category == '4' ? 'selected' : '' %> >Petrol Pump</option>
+            <option value="5" <%= store[0].category == '5' ? 'selected' : '' %> >Electric shop</option>
+            <option value="6" <%= store[0].category == '6' ? 'selected' : '' %> >Retail Shop</option>
+            <option value="7" <%= store[0].category == '7' ? 'selected' : '' %> >Pharmacy</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="photo_url" id="photoUrl" placeholder="Photo URL" value="<%=store[0].photo_url%>" />
+        </div>
+        <div class="form-group">
+            <textarea name="description" class="form-control" placeholder="About your business"><%=store[0].description%></textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="address" class="form-control" placeholder="Address"><%=store[0].address%></textarea>
+        </div>
+        <div class="form-inline">
+            <div class="mb-2  mr-sm-2">
+            <input type="text" class="form-control" name="lat" id="lat" placeholder="Lattitude" value="<%=store[0].latitude%>" />
+            </div>
+            <div class="mb-2">
+            <input type="text" class="form-control" name="long" id="long" placeholder="Longitude" value="<%=store[0].longitue%>" />
+            </div>
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -29,13 +29,21 @@
   },
   "homepage": "https://github.com/GautamArya/store-locator#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootbox": "^5.1.3",
     "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "datatables": "^1.10.18",
     "debug": "^4.1.1",
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "jquery": "^3.4.0",
-    "mongodb": "^3.2.3",
-    "nodemon": "^1.18.11"
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-validator": "^6.1.1",
+    "jquery": "^3.4.1",
+    "mongodb": "^3.2.7",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1"
   },
   "nodemonConfig": {
     "restartable": "rs",
@@ -47,5 +55,8 @@
       "NODE_ENV": "DEVELOPMENT",
       "port": 3000
     }
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0"
   }
 }
